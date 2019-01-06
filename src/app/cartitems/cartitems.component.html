@@ -1,0 +1,32 @@
+<!--cart items : {{count}} <br><br>
+<input type="button" value="Add to cart" (click)="addCartItems()">
+<input type="text" [(ngModel)]="data">-->
+<h2>Child Component</h2>
+<div style="width:100%;height:500px">
+Product Code : <input type="text" [(ngModel)]= "code"> <br> <br>
+Product Name : <input type="text" [(ngModel)]= "name"> <br><br>
+<button class = "btn btn-primary" (click)="createProduct()">Add Product</button>
+<br><br>
+Product Code : <input type="text" [(ngModel)]= "ecode"> <br> <br>
+Product Name : <input type="text" [(ngModel)]= "ename"> <br><br>
+<button class = "btn btn-primary" (click)="updateProduct()">Update Product</button>
+<br><br>
+<div class = "center">
+<table style="width:200%; ">
+    <tr style ="font-style: italic;">
+        <th>S.No</th>
+        <th>Product Code</th>
+        <th>Product Name</th>
+        <th>Operation</th>
+    </tr>
+    
+    <tr *ngFor = "let p of productArray | filter:search; index as i" [ngStyle]= "{'backgroundColor': i%2 ? 'lightblue' : 'yellow'}" style="border: 3px solid black">
+        <td>{{i+1}}</td>
+        <td>{{p.productCode}}</td>
+        <td>{{p.productName}}</td>
+        <td><button class = "btn btn-danger btn-md"(click)="deleteProduct(i)">Delete</button> &nbsp;
+        <button class = "btn btn-info btn-md"(click)="editProduct(i)">Edit</button></td>
+    </tr>
+</table>
+</div>
+</div>

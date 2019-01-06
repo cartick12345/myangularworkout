@@ -1,0 +1,12 @@
+table, th, tr, td {
+    border: 2px solid black;
+    padding : 10px;
+}
+th {
+    text-align: center;
+    color: blue;
+}
+.center{
+    position: absolute;
+    left: 15%;
+}

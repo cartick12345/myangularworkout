@@ -1,0 +1,37 @@
+<h2>Component Interaction</h2>
+<app-product [parentData]= "parentMess" (onMyButtonClick)="getDataFromChild($event)">
+  
+</app-product>
+<br><br>
+Child Data to parent: {{childMess}}
+<!--<h1>Products List Down</h1>
+<app-product>
+  
+</app-product>
+<input type="text" value="" [disabled]="isAllowed"> <br><br>
+<input type="button" value = "Enable" (click)="enableTextBox()"> &nbsp;
+<input type="button" value = "Disable" (click)="disableTextBox()"> <br><br>-->
+<!--Product Code : <input type="text" [(ngModel)]= "code"> <br> <br>
+Product Name : <input type="text" [(ngModel)]= "name"> <br><br>
+<button class = "btn btn-primary" (click)="createProduct()">Add Product</button>
+<br><br>
+Search : <input type="text" #search (keyup)="searchProduct(search.value)">
+<br><br>
+<div class = "center">
+<table style="width:200%; ">
+    <tr style ="font-style: italic;">
+        <th>S.No</th>
+        <th>Product Code</th>
+        <th>Product Name</th>
+        <th>Delete</th>
+    </tr>
+    <tr *ngFor = "let p of productArray; index as i" [ngStyle]= "{'backgroundColor': i%2 ? 'lightblue' : 'yellow'}" style="border: 3px solid black">
+        <td>{{i+1}}</td>
+        <td>{{p.productCode}}</td>
+        <td>{{p.productName}}</td>
+        <td><button class = "btn btn-danger"(click)="deleteProduct(i)">Delete</button></td>
+    </tr>
+</table>
+</div>-->
+
+

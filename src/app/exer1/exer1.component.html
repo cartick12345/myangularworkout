@@ -1,0 +1,81 @@
+
+
+Text Box: <input  [(ngModel)] = "userName" type="text" (keyup)= "createProduct($event)"> <br> <br>
+<p>{{userName}}</p>
+
+<input type="button" value="Reset" [disabled] ="userName.length==0" (click)="reset()">
+<h2 [class] = "successClass"> Karthick </h2>
+<h2 [class.text-danger]="hasError"> Shek bharveen</h2>
+<h2 [ngClass] = "classObj">Anis Fathima </h2>
+<p [style.color] = "'red'">My first Style Binding</p>
+<p [style.color] = "highlight">My first Style Binding</p>
+<h1 [ngStyle] = "stylesObj"> karthick shek</h1>
+<p *ngIf = "isDisplay" >karthick</p>
+<div *ngIf = "isDisplay; then thenBlock; else elseBlock"></div>
+<ng-template #thenBlock>
+    <h2>
+        shalini
+    </h2>
+
+</ng-template>
+<ng-template #elseBlock>
+    <h3>
+        karthick
+    </h3>
+</ng-template>
+<div *ngFor = "let name of veg; even as e; first as f; last as l; odd as o;index as i" [hidden]="f || l" >
+    <h2>{{e}} {{o}} {{name}} {{f}} {{l}} {{i}} </h2>
+</div>
+<div [ngSwitch]="color">
+    <div *ngSwitchCase = "'red'">red color</div>
+    <div *ngSwitchCase = "'blue'">blue color</div>
+    <div *ngSwitchCase = "'green'">green color</div>
+    <div *ngSwitchDefault>NO color</div>
+</div>
+<br><br>
+<select name="page" [(ngModel)] = "page" >
+    <option value="Home">Home</option>
+    <option value="About">About</option>
+    <option value="Contact">Contact</option>
+    <option value="other">other</option>
+</select>
+<div [ngSwitch]="page">
+    <div *ngSwitchCase = "'Home'"><h1 [class.pagesize]=true>HOME PAGE</h1></div>
+    <div *ngSwitchCase = "'About'"><h1 [class.pagesize]=true>ABOUT PAGE</h1></div>
+    <div *ngSwitchCase = "'Contact'"><h1 [class.pagesize]=true>CONTACT PAGE</h1></div>
+    <div *ngSwitchCase = "'other'"><h1 [class.pagesize]=true>OTHER PAGE</h1></div>
+</div>
+<br><br>
+<button class = "btn btn-primary "[class.active]="viewMode == 'Personal'" (click)= "viewMode = 'Personal'">Personal</button> &nbsp;
+<button class = "btn btn-success" [class.active]="viewMode == 'contact'" (click)= "viewMode = 'contact'">contact</button> <br><br> 
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase = "'Personal'">
+        <pre>
+    Name : karthick
+    age : 30
+    place :erode
+</pre>
+    </div>
+    <div *ngSwitchCase = "'contact'">
+        <pre>
+    phone number : 9942269706
+    email : cartickme@gmail.com
+</pre>
+    </div>
+    <div *ngSwitchDefault>
+        No Records Found
+    </div>
+</div>
+<button class = "btn btn-primary" (click)="hideContent()">My data</button>
+
+<p [hidden]="isDisplay">My Test Data</p>
+<ul *ngFor = "let x of countArray; index as i">
+    <li [ngStyle]="{'color': i>=4 ? 'yellow' : 'black'}" [ngClass] = "{'backclass':i>=4}" >{{x}}</li>
+</ul>
+<br>
+product code : <input type="text"  #tx1> <br><br>
+product name : <input type="text"  #tx2> <br> <br>
+<button (click)="addDetails(tx1.value, tx2.value)">Add Details</button> <br><br>
+Product Details: <ul *ngFor = "let p of productArray">
+<li>{{p.productCode}}  {{p.productName}}</li>
+</ul>

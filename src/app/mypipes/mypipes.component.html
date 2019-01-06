@@ -1,0 +1,68 @@
+<p>
+  mypipes works!
+</p>
+<h2>View Encapsulation</h2>
+<p>Hi</p>
+<p>Hello</p>
+<hr>
+<h2>Custom Pipes</h2>
+Reverse : <input type="text" [(ngModel)]="reverseString" (blur)="reverseText = reverseString"><br><br>
+Get Reversed : {{reverseText | reverse}} 
+<br><br>
+Ordinal : <input type="text" [(ngModel)]="ordNum" (keyup)="ordinalNumber = ordNum">  <br><br>
+Ordinal Number : {{ordinalNumber | ordinal}}
+<br><br>
+
+
+Limit character Display : <input type="number" [(ngModel)]="limit"><br><br>
+Summary :{{title | summary:undefined:limit}}
+<br><br>
+Date Of Birth : <input type="date" [(ngModel)]="dob" (blur)="userage=dob"><br><br>
+age : {{userage | age}} <br><br>
+<h2>Inbuilt Pipes</h2>
+<ng-content select = "[test],.myClass"></ng-content>
+
+lower case : {{name | lowercase}} 
+<br>
+UPPER CASE : {{wName | uppercase}}
+<br>
+Title Case : {{title | titlecase}}
+<br>
+Slice : {{title | slice:4}}
+<br>
+Object : {{obj | json}}
+<br>
+number : {{num | number:"4.3-4"}}
+<br>
+number : {{num | number:"5.10-11"}}
+<br>
+percentage : {{num1 | percent}}
+<br>
+currency : {{price | currency:"EUR" : "code"}}
+<br>
+short  : {{dt | date : "short"}}
+<br>
+medium : {{dt | date : "medium"}}
+<br>
+long : {{dt | date : "long"}}
+<br>
+full : {{dt | date : "full"}}
+<br>
+shortDate : {{dt | date : "shortDate"}}
+<br>
+mediumDate : {{dt | date : "mediumDate"}}
+<br>
+longDate : {{dt | date : "longDate"}}
+<br> 
+full Date : {{dt | date : "fullDate"}}
+<br>
+shortTime : {{dt | date : "shortTime"}}
+<br> 
+mediumTime : {{dt | date : "mediumTime"}}
+<br> 
+longTime : {{dt | date : "longTime"}}
+<br>
+full Time : {{dt | date : "fullTime"}}
+<br>
+my own Format : {{dt | date :"EEEE, MMMM, dd - yyyy hh:mm:ss SSS a"  }}
+<ng-content select=.myClass1,.myClass2></ng-content>

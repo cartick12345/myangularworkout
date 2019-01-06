@@ -1,0 +1,22 @@
+<h2 appHighlight>
+  Custom Highlight attribute Directive
+</h2>
+<br>
+Lower case : <input type="text" [appInputformat]="'lower'">
+<br><br>
+Upper case : <input type="text" [appInputformat]="'upper'">
+<br><br>
+Phone Number : <input type="text" appPhoneformat>
+<hr>
+<h2>goIF structural Directive</h2>
+<button (click) = "condition=!condition">Show & Hide Element</button>
+<div *appGoif = "condition">
+  show my structural directive
+</div>
+<hr>
+<h2>goFor Structural Directive</h2>
+<input type="number" [(ngModel)]="count">
+<hr>
+<ul>
+  <li *appGofor = "count">Hello</li>
+</ul>

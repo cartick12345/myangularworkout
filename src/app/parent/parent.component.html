@@ -1,0 +1,5 @@
+<p>
+  parent works!
+</p>
+<h2>{{childMessage}}</h2>
+<app-child (childEvent)="childMessage=$event" [parentData]="message"></app-child>
